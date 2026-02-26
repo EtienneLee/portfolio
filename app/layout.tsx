@@ -35,7 +35,9 @@ export default function RootLayout({
           <div className="flex gap-8">
             <Link href="/">home</Link>
             <Link href="/about">about</Link>
-            <a href="/resume.pdf">resume</a>
+            <a href="/resume.pdf" target="_blank">
+              resume
+            </a>
           </div>
         </nav>
         {children}
