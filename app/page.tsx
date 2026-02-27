@@ -4,7 +4,7 @@ export default function Home() {
       {/* Header */}
       <header className="mb-16">
         <h1 className="text-6xl font-bold mb-4">Etienne Lee</h1>
-        <p className="text-xl text-gray-600">CS + Data Science @ Penn</p>
+        <p className="text-xl text-gray-600">CS + DS @ UPenn</p>
       </header>
 
       {/* Experience */}
