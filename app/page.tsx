@@ -1,15 +1,12 @@
 import ExperienceSection from "./components/ExperienceSection";
 import ProjectsSection from "./components/ProjectsSection";
+import Hero from "./components/Hero";
 
 export default function Home() {
   return (
     <main className="min-h-screen p-8 max-w-4xl mx-auto">
       {/* Header */}
-      <header className="mb-16">
-        <h1 className="text-6xl font-bold mb-4">Etienne Lee</h1>
-        <p className="text-xl text-gray-600">CS + DS @ UPenn</p>
-      </header>
-
+      <Hero />
       <ExperienceSection />
       <ProjectsSection />
 
