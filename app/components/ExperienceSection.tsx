@@ -35,7 +35,7 @@ export default function ExperienceSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <section className="mb-16">
+    <section id="work" className="mb-16">
       <h2 className="text-2xl font-bold mb-8">Experience</h2>
 
       {experiences.map((exp, i) => (

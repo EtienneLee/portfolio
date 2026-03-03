@@ -11,7 +11,7 @@ export default function Home() {
       <ProjectsSection />
 
       {/* Links */}
-      <footer className="flex gap-8 text-sm">
+      <footer className="flex justify-between text-sm">
         <a href="mailto:etiennelee123@gmail.com">etiennelee123@gmail.com</a>
         <a href="https://github.com/EtienneLee" target="_blank">
           github

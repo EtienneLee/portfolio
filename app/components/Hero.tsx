@@ -42,7 +42,11 @@ export default function Hero() {
           letterSpacing: "-0.03em",
           lineHeight: 1,
           marginBottom: "2rem",
+          transition: "letter-spacing 0.4s ease",
+          cursor: "default",
         }}
+        onMouseEnter={(e) => (e.currentTarget.style.letterSpacing = "0.05em")}
+        onMouseLeave={(e) => (e.currentTarget.style.letterSpacing = "-0.03em")}
       >
         Etienne Lee
       </h1>
