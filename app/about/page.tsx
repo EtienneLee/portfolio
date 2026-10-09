@@ -40,7 +40,7 @@ export default function About() {
           style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}
         >
           <p style={{ fontSize: "0.975rem", color: "#444", lineHeight: 1.8 }}>
-            I'm a 20-year-old developer, currently a junior at the University of
+            I'm a 21-year-old developer, currently a senior at the University of
             Pennsylvania pursuing a Bachelor's in Computer Science and an
             accelerated Master's in Data Science. I'm interested in many areas
             of CS, but particularly drawn to full-stack development, data

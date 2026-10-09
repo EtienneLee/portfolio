@@ -8,7 +8,7 @@ const projects = [
     year: "2025",
     stack: "TypeScript · React",
     description:
-      "A Chrome extension that replaces every new tab with a random photo from a personal collection, built originally for friends and family.",
+      "A Chrome extension that displays a random photo from a personal collection as your new tab background, built originally for friends and family. Published on the Chrome Web Store.",
   },
   {
     num: "01",
@@ -16,7 +16,7 @@ const projects = [
     year: "2025",
     stack: "React · Node.js · PostgreSQL · AWS",
     description:
-      "Interactive full-stack website for exploring marine species and ocean conditions throughout the years, built on real oceanographic data. Led database architecture and frontend development.",
+      "Interactive full-stack website for exploring marine species and ocean conditions over time, built on real oceanographic data. Designed the database for 136M rows of raw data and sped up key queries up to 4x.",
   },
   {
     num: "02",
@@ -24,15 +24,15 @@ const projects = [
     year: "2025",
     stack: "C · Bash",
     description:
-      "Built a UNIX-like OS from scratch in C, featuring a priority scheduler, FAT filesystem, and interactive shell supporting standard UNIX commands.",
+      "Co-built a UNIX-like OS from scratch in C, featuring a priority scheduler, FAT filesystem, and interactive shell supporting standard UNIX commands.",
   },
   {
     num: "03",
-    name: "Steam Game Success Predictor",
-    year: "2024",
-    stack: "Python · Pandas · Scikit-learn",
+    name: "News Source Classification",
+    year: "2026",
+    stack: "Python · PyTorch · HuggingFace",
     description:
-      "ML model predicting video game success across 97K Steam games. Led the data cleaning, feature engineering, and model evaluation.",
+      "Predicts whether a headline came from Fox News or NBC News. Scraped and expanded the dataset to 17.9K headlines, then fine-tuned RoBERTa and DeBERTa to reach 91.75% accuracy.",
   },
 ];
 

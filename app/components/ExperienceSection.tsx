@@ -4,15 +4,24 @@ import { useState } from "react";
 const experiences = [
   {
     num: "00",
+    company: "IceKredit",
+    role: "Data Science Intern",
+    date: "Summer 2026",
+    year: "2026",
+    description:
+      "Led a cross-domain, cross-lingual Alzheimer's detection project using HuBERT and RoBERTa, reaching 0.70 balanced accuracy on a sparse, code-mixed target dataset mainly through domain adaptation and data augmentation.",
+  },
+  {
+    num: "01",
     company: "Conversion Capital",
     role: "Data Science Intern",
     date: "Summer 2025",
     year: "2025",
     description:
-      "Built pipelines to track investment signals across thousands of companies and automated data syncing between platforms using Python.",
+      "Built pipelines to track investment signals across 3,000+ companies and automated data syncing between platforms using Python.",
   },
   {
-    num: "01",
+    num: "02",
     company: "Neopets",
     role: "Software Engineering Intern",
     date: "Summer 2024",
@@ -21,11 +30,11 @@ const experiences = [
       "Built a browser extension and multiplayer game demo for the Neopets platform using React, TypeScript, and Node.js.",
   },
   {
-    num: "02",
-    company: "University of Pennsylvania",
+    num: "03",
+    company: "UPenn TA",
     role: "Teaching Assistant, CIS 5500: Databases",
     date: "Aug 2025 – Present",
-    year: "Present",
+    year: "2025 – Now",
     description:
       "TA for a graduate databases course with 200+ students. Hold office hours, mentor project groups, and write homework and exam questions.",
   },
@@ -36,7 +45,7 @@ export default function ExperienceSection() {
 
   return (
     <section id="work" className="mb-16">
-      <h2 className="text-2xl font-bold mb-8">Experience</h2>
+      <h2 className="text-2xl font-bold mb-8">Work Experience</h2>
 
       {experiences.map((exp, i) => (
         <div
