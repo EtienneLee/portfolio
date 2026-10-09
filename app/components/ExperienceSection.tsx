@@ -40,6 +40,8 @@ const experiences = [
   },
 ];
 
+const NUM_COL = "clamp(28px, 8vw, 50px)";
+
 export default function ExperienceSection() {
   const [hovered, setHovered] = useState<number | null>(null);
 
@@ -50,8 +52,11 @@ export default function ExperienceSection() {
       {experiences.map((exp, i) => (
         <div
           key={i}
-          onMouseEnter={() => setHovered(i)}
-          onMouseLeave={() => setHovered(null)}
+          onPointerEnter={(e) => e.pointerType === "mouse" && setHovered(i)}
+          onPointerLeave={(e) => e.pointerType === "mouse" && setHovered(null)}
+          onPointerUp={(e) =>
+            e.pointerType !== "mouse" && setHovered(hovered === i ? null : i)
+          }
           style={{
             borderTop: "1px solid #e0e0e0",
             ...(i === experiences.length - 1
@@ -61,16 +66,17 @@ export default function ExperienceSection() {
             transition: "background 0.2s ease",
             padding: "0 0.5rem",
             margin: "0 -0.5rem",
+            cursor: "pointer",
           }}
         >
           {/* Collapsed row */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "50px 1fr auto",
+              gridTemplateColumns: `${NUM_COL} 1fr auto`,
               alignItems: "center",
               padding: "1.1rem 0",
-              gap: "1rem",
+              gap: "0.75rem",
             }}
           >
             <span style={{ color: "#bbb", fontSize: "0.85rem" }}>
@@ -78,57 +84,66 @@ export default function ExperienceSection() {
             </span>
             <span
               style={{
-                fontSize: "1.4rem",
+                fontSize: "clamp(1.05rem, 4.5vw, 1.4rem)",
                 fontWeight: 600,
                 letterSpacing: "-0.02em",
                 color: hovered === i ? "#000" : "#333",
                 transition: "color 0.2s ease",
+                minWidth: 0,
               }}
             >
               {exp.company}
             </span>
             <span
               style={{
-                fontSize: "1.4rem",
+                fontSize: "clamp(1.05rem, 4.5vw, 1.4rem)",
                 fontWeight: 600,
                 letterSpacing: "-0.02em",
                 color: hovered === i ? "#555" : "#bbb",
                 transition: "color 0.2s ease",
+                whiteSpace: "nowrap",
               }}
             >
               {exp.year}
             </span>
           </div>
 
-          {/* Expanded content */}
+          {/* Expanded content: grows to fit, no fixed height */}
           <div
             style={{
-              overflow: "hidden",
-              maxHeight: hovered === i ? "120px" : "0px",
-              transition: "max-height 0.35s ease, padding 0.35s ease",
-              paddingLeft: "50px",
-              paddingBottom: hovered === i ? "1.25rem" : "0",
+              display: "grid",
+              gridTemplateRows: hovered === i ? "1fr" : "0fr",
+              transition: "grid-template-rows 0.35s ease",
             }}
           >
-            <p
+            <div
               style={{
-                fontSize: "0.8rem",
-                color: "#888",
-                marginBottom: "0.25rem",
+                overflow: "hidden",
+                minHeight: 0,
+                paddingLeft: NUM_COL,
               }}
             >
-              {exp.role} · {exp.date}
-            </p>
-            <p
-              style={{
-                fontSize: "0.9rem",
-                color: "#555",
-                lineHeight: 1.7,
-                maxWidth: "560px",
-              }}
-            >
-              {exp.description}
-            </p>
+              <p
+                style={{
+                  fontSize: "0.8rem",
+                  color: "#888",
+                  marginBottom: "0.25rem",
+                }}
+              >
+                {exp.role} · {exp.date}
+              </p>
+              <p
+                style={{
+                  fontSize: "0.9rem",
+                  color: "#555",
+                  lineHeight: 1.7,
+                  maxWidth: "560px",
+                  paddingBottom: "1.25rem",
+                }}
+              >
+                {exp.description}
+              </p>
+            </div>
           </div>
         </div>
       ))}

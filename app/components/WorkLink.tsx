@@ -1,8 +1,18 @@
 "use client";
+import { usePathname, useRouter } from "next/navigation";
+
 export default function WorkLink() {
+  const pathname = usePathname();
+  const router = useRouter();
+
   const handleClick = () => {
-    document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+    if (pathname === "/") {
+      document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push("/#work");
+    }
   };
+
   return (
     <button
       onClick={handleClick}

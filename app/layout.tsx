@@ -33,11 +33,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="flex justify-between items-center p-5 border-b">
+        <nav className="flex justify-between items-center px-5 py-4 border-b">
           <Link href="/" style={{ fontWeight: 400, fontSize: "0.95rem" }}>
             Etienne Lee
           </Link>
-          <div className="flex gap-8" style={{ fontSize: "0.95rem" }}>
+          <div className="flex gap-4 sm:gap-8" style={{ fontSize: "0.95rem" }}>
             <WorkLink />
             <Link href="/about">about</Link>
             <a href="/resume.pdf" target="_blank">
